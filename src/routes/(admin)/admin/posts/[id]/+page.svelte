@@ -1,9 +1,46 @@
 <script lang="ts">
     import { enhance } from '$app/forms';
+    import { onMount } from 'svelte';
     import type { PageData, ActionData } from './$types';
+    import 'easymde/dist/easymde.min.css';
 
     let { data, form } = $props();
-    let { post, tags, selectedTagIds } = $derived(data);
+    let { post, tags, selectedTagIds, supabase } = $derived(data);
+    let easyMDE: any;
+
+    onMount(async () => {
+        const EasyMDE = (await import('easymde')).default;
+        
+        easyMDE = new EasyMDE({ 
+            element: document.getElementById('content') as HTMLElement,
+            initialValue: form?.content ?? post.content ?? '',
+            forceSync: true,
+            uploadImage: true,
+            imageAccept: 'image/png, image/jpeg, image/gif, image/webp',
+            imageUploadFunction: async (file: File, onSuccess: (url: string) => void, onError: (error: string) => void) => {
+                try {
+                    const fileExt = file.name.split('.').pop();
+                    const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
+                    const filePath = `post-content/${fileName}`;
+
+                    const { error: uploadError } = await supabase.storage
+                        .from('images')
+                        .upload(filePath, file);
+
+                    if (uploadError) throw uploadError;
+
+                    const { data: { publicUrl } } = supabase.storage
+                        .from('images')
+                        .getPublicUrl(filePath);
+
+                    onSuccess(publicUrl);
+                } catch (error: any) {
+                    console.error('Error uploading image:', error);
+                    onError(error.message || 'Failed to upload image');
+                }
+            },
+        });
+    });
 </script>
 
 <div class="max-w-3xl mx-auto">

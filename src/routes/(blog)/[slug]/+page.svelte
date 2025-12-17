@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { PageData } from './$types';
+    import { marked } from 'marked';
 
     interface Post {
         title: string;
@@ -27,6 +28,9 @@
             day: 'numeric'
         });
     }
+
+    // Configure marked to be safe (optional but recommended) or just standard
+    // marked.use({ ... });
 </script>
 
 <div class="max-w-3xl mx-auto py-8">
@@ -58,13 +62,8 @@
 
             <div class="divider"></div>
             
-            <!-- 
-                Note: Content is stored as Markdown in the database. 
-                Since we don't have a markdown parser installed yet, we display it as pre-wrapped text.
-                To render Markdown, install 'marked' or 'svelte-markdown'.
-            -->
-            <div class="whitespace-pre-wrap font-sans text-base-content leading-relaxed">
-                {post.content || ''}
+            <div class="font-sans text-base-content leading-relaxed">
+                {@html marked(post.content || '')}
             </div>
         </article>
     {/if}
