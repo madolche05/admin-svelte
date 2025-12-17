@@ -2,8 +2,8 @@ import { redirect } from '@sveltejs/kit';
 import type { Actions } from './$types';
 
 export const actions: Actions = {
-    default: async ({ cookies }) => {
-        cookies.delete('sessionid', { path: '/' });
+    default: async ({ locals: { supabase } }) => {
+        await supabase.auth.signOut();
         throw redirect(303, '/login');
     }
 };

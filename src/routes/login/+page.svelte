@@ -37,9 +37,6 @@
                     <button class="btn btn-primary">Login</button>
                 </div>
             </form>
-            <div class="text-center mt-4">
-                 <p class="text-xs text-base-content/60">Gunakan: admin@example.com / password</p>
-            </div>
         </div>
     </div>
 </div>
