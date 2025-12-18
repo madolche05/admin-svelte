@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Article View Page</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232f48;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #324467;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-300">
+<!-- Reading Progress Bar -->
+<div class="fixed top-0 left-0 w-full z-[60]">
+<div class="h-1 bg-primary w-[35%] shadow-[0_0_10px_rgba(19,91,236,0.5)]"></div>
+</div>
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-[#232f48] bg-background-light/80 dark:bg-[#111722]/80 backdrop-blur-md">
+<div class="mx-auto max-w-[1200px] px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">article</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">ModernBlog</h2>
+</div>
+<div class="flex gap-3">
+<button class="flex size-10 items-center justify-center rounded-full bg-slate-200 dark:bg-[#232f48] text-slate-600 dark:text-white hover:bg-slate-300 dark:hover:bg-[#324467] transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-full bg-slate-200 dark:bg-[#232f48] text-slate-600 dark:text-white hover:bg-slate-300 dark:hover:bg-[#324467] transition-colors">
+<span class="material-symbols-outlined text-[20px]">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="relative flex flex-col items-center pt-12 pb-24 px-4 sm:px-6">
+<!-- Header Content Group -->
+<div class="w-full max-w-[800px] flex flex-col gap-6 mb-8 animate-fade-in-up">
+<!-- Breadcrumb / Category -->
+<div class="flex items-center gap-3">
+<a class="flex h-8 items-center justify-center gap-x-2 rounded-full border border-slate-200 dark:border-[#232f48] bg-white dark:bg-[#232f48] px-4 hover:border-primary transition-colors" href="#">
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Design</span>
+</a>
+<span class="text-slate-400 text-sm">•</span>
+<span class="text-slate-500 dark:text-slate-400 text-sm font-medium">5 min read</span>
+</div>
+<!-- Title -->
+<h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-[-0.03em]">
+                The Future of Minimalist Web Design
+            </h1>
+<!-- Subtitle -->
+<p class="text-slate-600 dark:text-[#92a4c9] text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
+                Exploring the impact of negative space, clean typography, and the absence of clutter in modern user interfaces.
+            </p>
+<!-- Author Block -->
+<div class="flex items-center gap-4 mt-2 py-4 border-t border-b border-slate-200 dark:border-[#232f48]">
+<div class="size-12 rounded-full overflow-hidden bg-slate-200 relative">
+<img alt="Portrait of Sarah Jenkins, the author" class="object-cover w-full h-full" data-alt="Portrait of Sarah Jenkins, the author" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_xVhprSAx6O38xMnJzFo8Bs5D8n_dlVTcXX6zNVI-CS4fEl_nUW1YtgY1TD3xHHdm3XZTrgBZfEVmRrqCeht-_pRRj6dkNNFljlEMajTLMo27ZIxBuqwNRaeN4d6go_vcZZp7_mSbbuPL5yYhtxB0gV0Av8Afs1xHvARPOeHQdcerAdzqfb6P7LScgNCkuJJrpC-Toqhnlpht0pnshIsjZUiNemqFjzHDRqUFfWP1awRkzJ4HtMYxWo9Z3JVZ-hPNl97p9Wr_Wm8"/>
+</div>
+<div class="flex flex-col">
+<span class="text-slate-900 dark:text-white font-bold text-base">Sarah Jenkins</span>
+<span class="text-slate-500 dark:text-[#92a4c9] text-sm">Published on Oct 24, 2023</span>
+</div>
+<div class="ml-auto flex gap-2">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Image -->
+<div class="w-full max-w-[1000px] mb-16 px-0 md:px-4">
+<div class="w-full aspect-[21/9] bg-slate-800 rounded-none md:rounded-2xl overflow-hidden relative shadow-2xl shadow-black/20">
+<img alt="Minimalist office workspace with white desk and laptop" class="w-full h-full object-cover" data-alt="Minimalist office workspace with white desk and laptop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqvwH12dc2jWcLbjGB94mgFQ-yu076ZbUp40cgEmx_qq_vCsgqNfNAC_eKmWzbxYeDMl3OEGwnpUni424IFQubIs2gUMfQSrBS6-X9cYCaVraC42uM4U66uPNzf7WrhVP1y8ugK3x-Ew43eAwGj-e-8gxiPgITy24Q7zG5qDNhdyi1QKOylNg45xqNOJ2pY2pcc0vamb_8RxkS44W0Ev-RXNV51skFQGFzO5JprzelmT6t5KiQQY0qkLxGOssxqobMbOXboEE4lw0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<p class="mt-3 text-center text-sm text-slate-500 dark:text-slate-400 italic">
+                Photo by <span class="underline decoration-slate-600">Unsplash</span>. Minimalism in action.
+            </p>
+</div>
+<!-- Content Layout with Sidebar -->
+<div class="w-full max-w-[1000px] grid grid-cols-1 lg:grid-cols-[80px_1fr] gap-12 relative">
+<!-- Sticky Social Sidebar (Desktop) -->
+<aside class="hidden lg:flex flex-col gap-6 sticky top-32 h-fit items-center">
+<div class="flex flex-col items-center gap-6 p-2 rounded-full bg-white dark:bg-[#1a2333] border border-slate-100 dark:border-[#232f48] shadow-lg shadow-black/5">
+<button class="flex flex-col items-center gap-1 p-3 rounded-full hover:bg-slate-100 dark:hover:bg-[#232f48] text-slate-400 hover:text-red-500 transition-all group">
+<span class="material-symbols-outlined group-hover:fill-current">favorite</span>
+<span class="text-[10px] font-bold">1.2k</span>
+</button>
+<button class="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-[#232f48] text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<div class="w-8 h-px bg-slate-200 dark:bg-[#232f48]"></div>
+<button class="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-[#232f48] text-slate-400 hover:text-[#1DA1F2] transition-colors">
+<!-- Twitter Icon replacement -->
+<span class="material-symbols-outlined">send</span>
+</button>
+<button class="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-[#232f48] text-slate-400 hover:text-[#0A66C2] transition-colors">
+<span class="material-symbols-outlined">link</span>
+</button>
+</div>
+</aside>
+<!-- Main Article Content -->
+<article class="prose prose-lg prose-slate dark:prose-invert max-w-none text-slate-700 dark:text-[#bcccdc]">
+<p class="text-xl md:text-2xl leading-relaxed font-medium text-slate-900 dark:text-white mb-8 first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-[-4px]">
+                    Minimalism is not about removing things you love. It’s about removing the things that distract you from the things you love. In web design, this philosophy has never been more relevant.
+                </p>
+<p class="mb-6 leading-8 text-lg">
+                    As we navigate an increasingly noisy digital landscape, the value of silence—visual silence—grows exponentially. Users are bombarded with notifications, pop-ups, and complex navigation structures. The antidote? A return to the fundamentals of design: space, typography, and color.
+                </p>
+<h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-12 mb-6">The Power of Negative Space</h2>
+<p class="mb-6 leading-8 text-lg">
+                    Negative space, or whitespace, is often misunderstood as "empty" space. In reality, it is an active design element. It provides breathing room for the eyes and helps to structure content hierarchically without the need for visible borders or dividers.
+                </p>
+<!-- Pull Quote -->
+<div class="my-10 border-l-4 border-primary pl-6 py-2 bg-slate-50 dark:bg-[#161e2c] rounded-r-xl">
+<p class="text-xl md:text-2xl font-serif italic text-slate-800 dark:text-white leading-relaxed">
+                        "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away."
+                    </p>
+<cite class="block mt-4 text-sm font-bold text-primary not-italic">— Antoine de Saint-Exupéry</cite>
+</div>
+<p class="mb-6 leading-8 text-lg">
+                    By leveraging generous margins and padding, designers can guide the user's attention to the most critical elements of the page—usually the content itself. This approach reduces cognitive load, allowing users to process information faster and with greater retention.
+                </p>
+<!-- Inline Image -->
+<figure class="my-10 rounded-2xl overflow-hidden border border-slate-200 dark:border-[#232f48]">
+<img alt="Abstract geometric shapes on a wall representing structure" class="w-full object-cover h-[400px]" data-alt="Abstract geometric shapes on a wall representing structure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmBK8LWSwh4ZNMTir9cJUFRucc5A2iN0SgTu_4c-Wqv_f71KMIrlR5ouuFwuWG4oMz3Ef5tyQbVUe_tthTYfzPHCzqdSaITcOKvS8aA4PisJn7IRbXKzHwdvJUQeZIYEdj4asU_1DwhpcaYsf0iFEdVwkjyGKhKroiJoW0kvvSIJyC_V5CTR07apmgWVmc0zb1bU_YGSXLaF5u0xUFpYGnTsOwnitxHuh8nZWNwHYI19P1uYOesXufSeA7sd5Q8pMUkJq5vd-xMuU"/>
+<figcaption class="p-4 bg-slate-50 dark:bg-[#161e2c] text-sm text-center text-slate-500 dark:text-slate-400">
+                        Structure without clutter creates harmony.
+                    </figcaption>
+</figure>
+<h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-12 mb-6">Typography as Interface</h2>
+<p class="mb-6 leading-8 text-lg">
+                    When visual clutter is stripped away, typography takes center stage. In minimalist design, type isn't just for reading; it's a structural element. Large, bold headings contrast with delicate body copy to create rhythm and flow.
+                </p>
+<ul class="list-none space-y-4 my-8 pl-0">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span><strong>Legibility first:</strong> Choosing typefaces with high x-heights and open counters.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span><strong>Scale and hierarchy:</strong> Using size rather than color to denote importance.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<span><strong>Limited pairing:</strong> Sticking to one or two font families to maintain consistency.</span>
+</li>
+</ul>
+<p class="mb-6 leading-8 text-lg">
+                    The future of web design isn't about adding more features. It's about refining the experience until it feels invisible.
+                </p>
+<!-- Tags Footer -->
+<div class="mt-12 pt-8 border-t border-slate-200 dark:border-[#232f48]">
+<h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Related Topics</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-[#1c2636] text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-[#253145] cursor-pointer transition-colors">#UXDesign</span>
+<span class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-[#1c2636] text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-[#253145] cursor-pointer transition-colors">#Minimalism</span>
+<span class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-[#1c2636] text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-slate-200 dark:hover:bg-[#253145] cursor-pointer transition-colors">#WebDev</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Mobile Sticky Action Bar (Bottom) -->
+<div class="lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-40">
+<div class="flex items-center gap-1 p-2 rounded-full bg-white dark:bg-[#232f48] border border-slate-200 dark:border-[#324467] shadow-xl">
+<button class="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-[#324467] text-slate-500 dark:text-white">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="w-px h-6 bg-slate-200 dark:bg-[#324467]"></div>
+<button class="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-[#324467] text-slate-500 dark:text-white">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-[#324467] text-slate-500 dark:text-white">
+<span class="material-symbols-outlined">bookmark_border</span>
+</button>
+</div>
+</div>
+<!-- Read Next Section -->
+<section class="w-full max-w-[1000px] mt-24 pt-12 border-t border-slate-200 dark:border-[#232f48]">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-8">Read Next</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<a class="group flex flex-col gap-4 rounded-2xl bg-white dark:bg-[#161e2c] p-4 hover:bg-slate-50 dark:hover:bg-[#1c2636] transition-colors border border-transparent hover:border-slate-200 dark:hover:border-[#232f48]" href="#">
+<div class="w-full aspect-video rounded-xl overflow-hidden bg-slate-200">
+<img alt="Futuristic cyber security interface concept" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic cyber security interface concept" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALs16RzYOTQioVf_rgq5C16VIzHzmR3MWSlC8ylaeULoyy-tiRRvdkwI8kDHo1t9BWUwVozvpgRqDv8in6iYbsR01MHHrQlvE6OcsycSJMdqZqfpbUfsO7aaishpyA6qSbqU4JusKHB9k1KCUtLjvwvqIHtyj67ilqrlfnhdf4hxSzCH0R_Dy1WrJ7_B3gfly9HfDlSM7D69Kto9yI1ayRgRX6fMYGuWnrxam77OPYKGuDA8lxTUe2TqYv6Zi9PwN5tFzPwdjRsQs"/>
+</div>
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Technology</span>
+<h4 class="mt-2 text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                            Cybersecurity Trends for 2024
+                        </h4>
+<p class="mt-2 text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+                            How AI is reshaping the landscape of digital security and what you need to know to stay safe.
+                        </p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group flex flex-col gap-4 rounded-2xl bg-white dark:bg-[#161e2c] p-4 hover:bg-slate-50 dark:hover:bg-[#1c2636] transition-colors border border-transparent hover:border-slate-200 dark:hover:border-[#232f48]" href="#">
+<div class="w-full aspect-video rounded-xl overflow-hidden bg-slate-200">
+<img alt="Person holding a cup of coffee analyzing charts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Person holding a cup of coffee analyzing charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVJzw-TkEYgTN3FR8b6b-2_4SNEF6Q5zymaIGRdQwY7s_bykxijgzdi97b81vOpTh_Hf-X9xSRWZDR4S4y-WQLBO2_OlGThL4zlDOkkLhZkpasTihD8SYNKva2H_Ew_pMG5dvk2ylEroWU_B8pRxSApgyJHS-WrqSLkXvIikurx5K5hJMrhbHTPC5RbnGXjxV43D8vkqWgWtoHzJWewJ8uPwQARXjRQhoElW_lS79HCWGRRr93J9nXIYgObr1OMx4-s8uw_EGKP0Y"/>
+</div>
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Business</span>
+<h4 class="mt-2 text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
+                            The Remote Work Revolution
+                        </h4>
+<p class="mt-2 text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+                            Is the office officially dead? We analyze the data from top tech companies shifting to hybrid models.
+                        </p>
+</div>
+</a>
+</div>
+</section>
+</main>
+</body></html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #101622;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232f48;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #135bec;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+<div class="relative flex flex-col min-h-screen w-full">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 border-b border-gray-200 dark:border-[#232f48] bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="w-full max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-3 hover:opacity-80 transition-opacity" href="#">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined !text-[20px]">edit_note</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">MinimalBlog</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Articles</a>
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Newsletter</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center relative w-64 h-10 group">
+<div class="absolute left-3 text-gray-400 group-focus-within:text-primary transition-colors pointer-events-none flex items-center">
+<span class="material-symbols-outlined !text-[20px]">search</span>
+</div>
+<input class="w-full h-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-[#232f48] rounded-full pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-gray-400 dark:placeholder:text-gray-500" placeholder="Search articles..." type="text"/>
+</div>
+<button class="hidden sm:flex bg-primary hover:bg-blue-600 text-white text-sm font-bold h-10 px-6 rounded-full items-center justify-center transition-transform active:scale-95 shadow-lg shadow-primary/25">
+                        Subscribe
+                    </button>
+<button class="md:hidden p-2 text-gray-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-6 py-8 flex flex-col gap-16">
+<!-- Hero Section -->
+<section class="@container">
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+<!-- Image Side -->
+<div class="w-full lg:w-3/5 group cursor-pointer overflow-hidden rounded-xl relative shadow-2xl shadow-black/20">
+<div class="aspect-[16/10] bg-gray-800 w-full relative overflow-hidden rounded-xl">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist workspace with laptop and coffee" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGs5ddDmHJNYZgeUFFkz_-vYREMc48LdzUoBFZzsu53x0Bpu_UTHf6fYmq3gX27_PTzPacS9uGiw3pLiSIvfGw5dGide6Hxep6ppIRDmx8vVMmZaBrBugPXXN9Wle74siTxag-1rkKu0m6cukRGr_UImgXEReCXispx9fhXi3YI5uJbk5H-inFvCruNzOAz99MB6GpInqUGi_ys937sJuPPmn-BnTFVZpIwGRSbZN-56GMJ_6kpS4XMJXOgU8w9LG0syQPraaN3mw');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="absolute top-4 left-4 bg-white/10 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full">
+<span class="text-xs font-bold text-white uppercase tracking-wider">Featured</span>
+</div>
+</div>
+<!-- Content Side -->
+<div class="w-full lg:w-2/5 flex flex-col gap-6">
+<div class="flex items-center gap-3 text-sm font-medium text-primary">
+<span>Productivity</span>
+<span class="w-1 h-1 rounded-full bg-gray-400"></span>
+<span class="text-gray-500 dark:text-gray-400">Oct 24, 2023</span>
+</div>
+<h1 class="text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight text-gray-900 dark:text-white group-hover:text-primary transition-colors cursor-pointer">
+                            The Future of Digital Minimalism
+                        </h1>
+<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Explore how reducing digital clutter can improve focus and mental clarity in an increasingly connected world. We dive deep into practical steps for a cleaner digital life.
+                        </p>
+<div class="flex items-center gap-4 pt-2">
+<div class="h-10 w-10 rounded-full bg-gray-700 overflow-hidden border-2 border-background-light dark:border-background-dark">
+<img alt="Portrait of the author" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIHTHuTX-9SgQl9GBjXF-iSWeOBhnATKPCUyxJ8esbzm533Be1vlfpJ3NCdVFTgfiIup4DYdtORM55IChjiA3LJBuNHZpnSTrFyQTpRzrpLq2QEouFbrE6F8iXF4yIEZnhwpXRZ-1-JJroZb4DSF3bBmr9SHYdmzWvd-yyDkpYHK_fl9bDZCvml01Q12wiS3Bwiefqs9A_xevXf7WHs407C84nb0mZJBW80ayqAEloLBOUP292H2h6jAXa4WzgJNZ7oGymT3smVBg"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-gray-900 dark:text-white">Alex Morgan</span>
+<span class="text-xs text-gray-500 dark:text-gray-400">Editor in Chief</span>
+</div>
+</div>
+<div class="pt-4">
+<button class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-blue-400 transition-colors group">
+                                Read Full Story 
+                                <span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters -->
+<section class="w-full overflow-x-auto pb-4 no-scrollbar">
+<div class="flex items-center gap-3 min-w-max">
+<button class="px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-bold shadow-md transition-transform hover:-translate-y-0.5">
+                        All Posts
+                    </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-[#232f48] text-gray-600 dark:text-gray-300 hover:border-primary/50 hover:text-primary dark:hover:text-primary text-sm font-bold transition-all hover:-translate-y-0.5">
+                        Design
+                    </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-[#232f48] text-gray-600 dark:text-gray-300 hover:border-primary/50 hover:text-primary dark:hover:text-primary text-sm font-bold transition-all hover:-translate-y-0.5">
+                        Development
+                    </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-[#232f48] text-gray-600 dark:text-gray-300 hover:border-primary/50 hover:text-primary dark:hover:text-primary text-sm font-bold transition-all hover:-translate-y-0.5">
+                        Productivity
+                    </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-[#232f48] text-gray-600 dark:text-gray-300 hover:border-primary/50 hover:text-primary dark:hover:text-primary text-sm font-bold transition-all hover:-translate-y-0.5">
+                        UX Research
+                    </button>
+<button class="px-5 py-2.5 rounded-full bg-white dark:bg-[#192233] border border-gray-200 dark:border-[#232f48] text-gray-600 dark:text-gray-300 hover:border-primary/50 hover:text-primary dark:hover:text-primary text-sm font-bold transition-all hover:-translate-y-0.5">
+                        Tutorials
+                    </button>
+</div>
+</section>
+<!-- Articles Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] w-full bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract colorful gradient waves representing color theory" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTG1xQQOgQyjKCke0SVI4nrgS4e5eBZwgrcxo210VepCqRArrHSkmdyVVl8ewIGm1eCVND3Jk3zZopefXHVsAk-4-JKA8WXXsoWiWcHGcGTiBD8A8vTavt7jxomDH-gbpS2BUNFVz7I_peFll7aFR2ZniXT8TfOa1I9pW-HnckC5QYaT1ufPKQ_TRUrVDJkO-XtlTSSqwpHwxiI6MOP6wh_Z9JlkRTu9ajyzC1jG7OyqIamjtVnmR3JBYgrAJqwk7quPj4GAtip0Q');">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+<span>Design</span>
+<span class="text-gray-500 dark:text-gray-600">•</span>
+<span class="text-gray-500 dark:text-gray-400">5 min read</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                            Understanding Color Theory in Dark Mode
+                        </h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Designing for dark interfaces requires a different approach to saturation and contrast. Learn the basics here.
+                        </p>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] w-full bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Close up of modern typography on a screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmUzL7jcLClQ4zHRFBTu9hEH4kJpDrFzN5lXKJxKGmytk0fPHdLMaatWc6Vsa_cjw7VAXHL33BN2zEi1Gy-xoiHsff2N2QaCccdRLKaQrTyImpiwJtR8jS_ixbXgRmIsRrvSKjVmdl8hmNjxNv7nkCvhg3pZZXFciL02eKi8DlOyNGO-tK3MYPaE71xPWUN13b2AnC63FN9-x9ZT94uZsQyjcce0LIP6rxtiz7mJ-_59t0h9ibybwKtjsd50qzT0Z2yYuF63d_gxY');">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+<span>Typography</span>
+<span class="text-gray-500 dark:text-gray-600">•</span>
+<span class="text-gray-500 dark:text-gray-400">3 min read</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                            Why Manrope is the perfect font for modern UI
+                        </h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            A deep dive into the geometry and readability of the Manrope typeface and why it's taking over the web.
+                        </p>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] w-full bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Code syntax on a dark screen monitor" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_qMcTdiPa3CJ2i91U134eBv4r_9_tGdbHPAYrZtjvR9RqEcVLmVU5Nh8zMaTWvEtCbS9JhF54dDw1lqLH62QZ63pniLT0E7856UJh6sboOyombzM9BW5_Qh5Vu-ODupEZa9uuLswbMP7XB6hnMdjH48xlyFgmxHMBFl3Wp5GJNr64n9i4OYxSZfObvcTKgrMAl-QNCOxRtfxKGuxf56yJacxzHMqZcvxCAn9pOajO1m3NiZTXhF1ZlRLRwPUAI0ZiYx88D1qv3zQ');">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+<span>Development</span>
+<span class="text-gray-500 dark:text-gray-600">•</span>
+<span class="text-gray-500 dark:text-gray-400">8 min read</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                            CSS Grid vs Flexbox: When to use which?
+                        </h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Stop guessing. We break down the use cases for both layout systems with practical examples.
+                        </p>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] w-full bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Person writing notes in a minimal notebook" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8_FFmbOwk20Z0fi28fJxZDhIrPB1HSORCuN0RS1Zf7RK8LM7zQIrh5aySz88zpS8sUjFKIS7TfL3CK5jM3UcVG0qlJNHx0MdECQE7AgzxknDyy_mhX1kjzpv4PIxv9bitSbyJmm_V3-ur91qB5z5fWH9JJekflqrxToIehg12j5VJ5Em2ULmI8Ug1dhJTxTxMUso6YHs_N37hcUW6ndOwpXfLiG2lb_UkekL-N5uN0roccmqR0FLcFSlFcS6Ps50mM6T_RLyR3TY');">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+<span>Productivity</span>
+<span class="text-gray-500 dark:text-gray-600">•</span>
+<span class="text-gray-500 dark:text-gray-400">6 min read</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                            The Art of Note Taking
+                        </h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            How to build a second brain using simple note-taking strategies that actually stick.
+                        </p>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] w-full bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Abstract geometric 3d shapes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDnqEoHtQA2dxVAvQcwQ00IK32I9Y2rzFrmlYqijHkz1xoTYnwVX4JjCkB0aLJWxPFv0jc9Nf3NEGJaGEXzUkSuiM-wdeesthMB11E7m-pEeYQ_il39_9Mkf3sbM1FB67yynJ1zPV5UJsbq7DLH8qyyDqDXKcHqM3KcTPB9Hpud_TyYsPdb6hd04G-tvZ-oLn73QHjGnuEJLZcn7kZXLPq5RbNp5Anj8AGoiT-Xs49Gw6i-bUhCuAOP8RgqnjD9IWxKjlJNH_aMUZs');">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+<span>UX Design</span>
+<span class="text-gray-500 dark:text-gray-600">•</span>
+<span class="text-gray-500 dark:text-gray-400">4 min read</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                            Micro-interactions: Small details, big impact
+                        </h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Why the smallest animations in your app might be the most important feature for user retention.
+                        </p>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] w-full bg-gray-800">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Group of people working together around a laptop" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrEGKuRXEaGqApHdPcvFzJbhRu0dwpti4wF2r_z6rVW4Ma97N-c2t0p3jhJss1PNT648lQU4vGsEOwZbbiIYo6TmBsqGXUPX_idVk0_CJ1Ofjw26-23muyNUsJ4L28EcN0hSrMWuB7PzWTuhM5sOYd8m_A1jo9p0_bTxQ11ZrDb8obEW6DddRfk7tIl-aLdEiG_qYRQlX4TNcFUykgg0kWRvSMnWRtt828-ANJTp0yH8XwRJCdRA3IvGpUXYWtG0Mp-DOJqEP59qk');">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
+<span>Culture</span>
+<span class="text-gray-500 dark:text-gray-600">•</span>
+<span class="text-gray-500 dark:text-gray-400">7 min read</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">
+                            Building Remote Culture
+                        </h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+                            Tips and tricks for keeping your remote team connected, engaged, and productive.
+                        </p>
+</div>
+</article>
+</section>
+<!-- Newsletter Section -->
+<section class="w-full py-10">
+<div class="relative bg-[#192233] border border-[#232f48] rounded-[2rem] overflow-hidden">
+<!-- Decorative gradients -->
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 px-8 py-12 md:px-16 md:py-20 text-center flex flex-col items-center gap-8">
+<div class="flex flex-col gap-4 max-w-2xl">
+<div class="w-12 h-12 bg-primary/20 text-primary rounded-xl flex items-center justify-center mx-auto mb-2">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-black text-white tracking-tight">
+                                Join the weekly digest
+                            </h2>
+<p class="text-gray-400 text-lg">
+                                Get the latest articles on design, coding, and digital minimalism sent directly to your inbox. No spam, ever.
+                            </p>
+</div>
+<form class="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+<input class="flex-1 bg-[#101622] border border-[#232f48] text-white text-sm rounded-full px-6 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-gray-600" placeholder="Enter your email" type="email"/>
+<button class="bg-primary hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full transition-transform active:scale-95 shadow-lg shadow-primary/25" type="button">
+                                Subscribe
+                            </button>
+</form>
+<p class="text-xs text-gray-500">
+                            By subscribing, you agree to our Privacy Policy.
+                        </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-gray-200 dark:border-[#232f48] bg-background-light dark:bg-background-dark py-12 mt-auto">
+<div class="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="size-6 flex items-center justify-center bg-gray-800 rounded text-white">
+<span class="material-symbols-outlined !text-[16px]">edit_note</span>
+</div>
+<span class="font-bold text-gray-900 dark:text-white">MinimalBlog</span>
+</div>
+<div class="flex gap-8 text-sm font-medium text-gray-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">RSS</a>
+</div>
+<div class="text-sm text-gray-500">
+                    © 2023 MinimalBlog. All rights reserved.
+                </div>
+</div>
+</footer>
+</div>
+</body></html>
